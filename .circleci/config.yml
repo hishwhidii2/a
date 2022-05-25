@@ -12,7 +12,7 @@ jobs:
     parallelism: 10
     machine:
       image: ubuntu-2004:202101-01
-    resource_class: large
+    resource_class: arm.large
     steps:
       - checkout
       - run:
